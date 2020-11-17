@@ -130,12 +130,11 @@ class _RandomWordsState extends State<RandomWords> {
                                                     "Welcome back, " +
                                                         user.getUserName(),
                                                     style: TextStyle(
-                                                        fontSize: 16.0
-                                                        )),
+                                                        fontSize: 16.0)),
                                               )),
                                           IconButton(
                                             icon: Icon(Icons.keyboard_arrow_up),
-                                            onPressed: () {},
+                                            onPressed: null,
                                           ),
                                         ],
                                       ),
@@ -362,7 +361,7 @@ class _LoginScreen extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final user = Provider.of<LogInApp>(context);
     var _validate = true;
-    var contexts;
+   // var contexts;
     TextEditingController _email = TextEditingController(text: "");
     TextEditingController _password = TextEditingController(text: "");
     TextEditingController _confirm = TextEditingController(text: "");
@@ -442,7 +441,7 @@ class _LoginScreen extends State<LoginScreen> {
                       side: BorderSide(color: Colors.green)),
                   onPressed: () async {
                     //
-                    contexts = context;
+                   // contexts = context;
                     showModalBottomSheet<void>(
                       context: context,
                       isScrollControlled: true,
@@ -496,12 +495,13 @@ class _LoginScreen extends State<LoginScreen> {
                                         onPressed: () async {
                                           if (_confirm.text == _password.text) {
                                             //do that
-                                            await user.signOut();
+                                            // await user.signOut();
                                             await user.signUp(
                                                 _email.text, _password.text);
                                             //await user.signIn(_email.text, _password.text);
-                                            Navigator.pop(context);
-                                            Navigator.pop(contexts);
+                                            Navigator.pushNamed(
+                                                context, '/login');
+                                            Navigator.pushNamed(context, '/');
                                           } else {
                                             setState(() {
                                               _validate = false;
