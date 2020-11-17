@@ -130,8 +130,8 @@ class _RandomWordsState extends State<RandomWords> {
                                                     "Welcome back, " +
                                                         user.getUserName(),
                                                     style: TextStyle(
-                                                        fontSize: 16.0,
-                                                        fontFamily: 'Schyler')),
+                                                        fontSize: 16.0
+                                                        )),
                                               )),
                                           IconButton(
                                             icon: Icon(Icons.keyboard_arrow_up),
