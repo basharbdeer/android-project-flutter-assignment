@@ -344,7 +344,7 @@ class _RandomWordsState extends State<RandomWords> {
 
   void _logOut() async {
     // final user = Provider.of<LogInApp>(context,listen:false);
-    sheetController.snapToPosition(SnapPosition(positionFactor: 0.1));
+    sheetController.snapToPosition(SnapPosition(positionFactor: 0.089));
     canDrag = false;
     await user.signOut();
     _saved.clear();
