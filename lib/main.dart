@@ -67,7 +67,7 @@ class _RandomWordsState extends State<RandomWords> {
   final TextStyle _biggerFont = const TextStyle(fontSize: 18);
   var user;
   var _saved = Set<WordPair>();
-  var canDrag = false;
+  var canDrag = true;
   SnappingSheetController sheetController = SnappingSheetController();
   @override
   Widget build(BuildContext context) {
