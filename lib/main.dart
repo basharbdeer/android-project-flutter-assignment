@@ -115,6 +115,7 @@ class _RandomWordsState extends State<RandomWords> {
                                   Expanded(
                                     child: Container(
                                       color: Colors.grey,
+                                      height: 60,
                                       child: Row(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
@@ -122,13 +123,16 @@ class _RandomWordsState extends State<RandomWords> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceBetween,
                                         children: <Widget>[
-                                          Padding(
-                                              padding: EdgeInsets.all(26.0),
-                                              child: Text(
-                                                  "Welcome back, " +
-                                                      user.getUserName(),
-                                                  style: TextStyle(
-                                                      fontSize: 13.5))),
+                                          Flexible(
+                                              flex: 3,
+                                              child: Center(
+                                                child: Text(
+                                                    "Welcome back, " +
+                                                        user.getUserName(),
+                                                    style: TextStyle(
+                                                        fontSize: 16.0,
+                                                        fontFamily: 'Schyler')),
+                                              )),
                                           IconButton(
                                             icon: Icon(Icons.keyboard_arrow_up),
                                             onPressed: () {},
@@ -225,7 +229,7 @@ class _RandomWordsState extends State<RandomWords> {
                     } else {
                       canDrag = false;
                       sheetController.snapToPosition(SnapPosition(
-                          positionFactor: 0.1,
+                          positionFactor: 0.089,
                           snappingCurve: Curves.easeInBack,
                           snappingDuration: Duration(milliseconds: 1)));
                     }
