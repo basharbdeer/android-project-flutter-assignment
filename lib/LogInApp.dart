@@ -4,7 +4,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'dart:io';
-import 'package:file_picker/file_picker.dart';
 enum Status { Uninitialized, Authenticated, Authenticating, Unauthenticated }
 
 class LogInApp with ChangeNotifier {
@@ -84,25 +83,25 @@ class LogInApp with ChangeNotifier {
         .get()
         .then((querySnapshot) {
       querySnapshot.docs.forEach((result) {
-        String FirstWord = result
+        String firstWord = result
             .data()
             .entries
             .first
             .value
             .toString();
-        String SecondWord = result
+        String secondWord = result
             .data()
             .entries
             .last
             .value
             .toString();
-        s.add(WordPair(FirstWord, SecondWord));
+        s.add(WordPair(firstWord, secondWord));
       });
     });
     return Future<Set<WordPair>>.value(s);
   }
 
-  String GetUserName() {
+  String getUserName() {
     return _user.email;
   }
 

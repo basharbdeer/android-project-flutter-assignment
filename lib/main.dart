@@ -77,7 +77,7 @@ class _RandomWordsState extends State<RandomWords> {
     //user.signOut();
     if (user.status == Status.Authenticated) {
       icon = Icons.exit_to_app;
-      func = _LogOut;
+      func = _logOut;
     }
     return Scaffold(
         appBar: AppBar(
@@ -126,7 +126,7 @@ class _RandomWordsState extends State<RandomWords> {
                                               padding: EdgeInsets.all(26.0),
                                               child: Text(
                                                   "Welcome back, " +
-                                                      user.GetUserName(),
+                                                      user.getUserName(),
                                                   style: TextStyle(
                                                       fontSize: 13.5))),
                                           IconButton(
@@ -153,7 +153,7 @@ class _RandomWordsState extends State<RandomWords> {
                                   ),
                                   Padding(
                                       padding: EdgeInsets.all(16.0),
-                                      child: Text(user.GetUserName(),
+                                      child: Text(user.getUserName(),
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 15))),
@@ -338,7 +338,7 @@ class _RandomWordsState extends State<RandomWords> {
     Navigator.pushNamed(context, '/login');
   }
 
-  void _LogOut() async {
+  void _logOut() async {
     // final user = Provider.of<LogInApp>(context,listen:false);
     sheetController.snapToPosition(SnapPosition(positionFactor: 0.1));
     canDrag = false;
